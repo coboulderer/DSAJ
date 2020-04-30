@@ -4,8 +4,6 @@ import java.util.Stack;
 
 public class PostFixCalculator {
 
-
-
     /**
      * Will perform postfix calculations on input.
      * If input is null or empty will return 0
@@ -18,27 +16,34 @@ public class PostFixCalculator {
         if (input != null && input.length() > 0) {
             for (int i = 0; i < input.length(); i++) {
                 char current = input.charAt(i);
-                if (current >= '0' && current <= '9') {
-                    long num = Long.parseLong(String.valueOf(current));
-                    numberStack.push(num);
-                } else {
-                    numOne = numberStack.pop();
-                    numTwo = numberStack.pop();
-                    switch (current) {
-                        case '+':
-                            numberStack.push(numOne + numTwo);
-                            break;
-                        case '-':
-                            numberStack.push(numTwo - numOne);
-                            break;
-                        case '*':
-                            numberStack.push(numOne * numTwo);
-                            break;
-                        case '/':
-                            numberStack.push(numTwo / numOne);
-                            break;
-                        default:
-                            numberStack.push(0L);
+                if (current != ' ') {
+                    if (current >= '0' && current <= '9') {
+                        int j = i + 1;
+                        while (j < input.length() && input.charAt(j) != ' ') {
+                            j++;
+                        }
+                        long num = Long.parseLong(input.substring(i, j));
+                        i = j;
+                        numberStack.push(num);
+                    } else {
+                        numOne = numberStack.pop();
+                        numTwo = numberStack.pop();
+                        switch (current) {
+                            case '+':
+                                numberStack.push(numOne + numTwo);
+                                break;
+                            case '-':
+                                numberStack.push(numTwo - numOne);
+                                break;
+                            case '*':
+                                numberStack.push(numOne * numTwo);
+                                break;
+                            case '/':
+                                numberStack.push(numTwo / numOne);
+                                break;
+                            default:
+                                numberStack.push(0L);
+                        }
                     }
                 }
             }
