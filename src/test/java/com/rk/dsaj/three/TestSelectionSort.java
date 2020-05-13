@@ -15,7 +15,6 @@ public class TestSelectionSort extends BaseTest {
     public void testSortInversed() {
         long[] input = {5, 4, 3, 2, 1};
         input = selectionSort.selectionSort(input);
-        printArray(input);
         for (int i = 0; i < Array.getLength(input) - 1; i++) {
             Assertions.assertTrue(input[i] < input[i + 1]);
         }
@@ -30,7 +29,6 @@ public class TestSelectionSort extends BaseTest {
             input[i] = random.nextLong();
         }
         input = selectionSort.selectionSort(input);
-        printArray(input);
         for (int i = 0; i < size - 1; i++) {
             Assertions.assertTrue(input[i] < input[i + 1]);
         }

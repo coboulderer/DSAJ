@@ -6,7 +6,7 @@ import java.lang.reflect.Array;
  * Insertion Sort Notes
  * Runs in O(n^2) as well, but performs better than other elementary sorts if
  * data is already partially sorted
- * In the worst case scenario, a completely inveretd array, insertion sort == bubble sort
+ * In the worst case scenario, a completely inverted array, insertion sort == bubble sort
  */
 public class InsertionSort {
 

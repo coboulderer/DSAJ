@@ -22,7 +22,9 @@ public class SelectionSort {
                         minIndex = j;
                     }
                 }
-                swap(i, minIndex);
+                if (i != minIndex) {
+                    swap(i, minIndex);
+                }
             }
         }
         return array;
