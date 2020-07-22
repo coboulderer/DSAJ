@@ -22,6 +22,6 @@ public class BaseTest {
             output = output + input[i] + " ";
         }
         output = output + "]";
-        System.out.println(output);
+        LOGGER.info(output);
     }
 }

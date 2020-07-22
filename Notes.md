@@ -78,3 +78,25 @@ This opens up additional methods to the interface: InsertFirst, InsertLast, Dele
 ###Doubly Linked List
 References are maintained to both previous and next items in the list
 
+##Chapter 6 - Recursion
+
+###Merge Sort
+Runs in O(n log n).
+Downside is it requires an extra array in memory.   
+
+##Chapter 7 - Advanced Sorting
+
+###Shell Sort
+Good for medium arrays, up to a few thousand items.  Runs at ~ O(n*log n), which is much faster than other O(N^2) sorts.
+Related to Insertion Sort, however it operates initially on a broader interval than 1 array element.  This spacing is 
+usually indicated by the increment denoted h.  After a given pass, an array is said to be 'h-sorted'.  
+
+Common h interval is to start at 1, then h(n+1) = 3 * h(n) + 1 e.g. 1, 4, 13, 40...
+When working back down h(n-1) = (h(n) - 1) / 3
+Calculating h stops when it is > the length of the array itself
+
+###Quick Sort
+Operates in O(n log n), however there are scenarios where this can degenerate into O(n^2).  Degeneration is usually a 
+result of data already inversely sorted and picking a bad pivot value.
+
+Numerous methods exist for picking a pivot value: last value in the array, random, median-of-three.
