@@ -100,3 +100,29 @@ Operates in O(n log n), however there are scenarios where this can degenerate in
 result of data already inversely sorted and picking a bad pivot value.
 
 Numerous methods exist for picking a pivot value: last value in the array, random, median-of-three.
+
+##Chapter 8 - Binary Trees
+
+###Terminology
+*Nodes* - where the data within the tree lives
+
+*Edges* - connections between nodes
+
+*Path* - a specific sequence of nodes and edges
+
+*Root* - the top of the tree, there is only 1.  Not a tree if there is more than one path between root and a given node.
+
+*Parent* - any node above another node directly connected by an edge.  The root has no parent.
+
+*Child* - any node below another node directly connected by an edge.
+
+*Leaf* - a node that does not have any children.
+
+*Subtree* - comprises all the children and subsequent descendants of a given node, the given node is the root of the subtree.
+
+*Binary Tree* - each node has at most two children.
+
+*Binary Search Tree* - defining characteristic is that the left child of a parent must have a lesser key value, whereas the
+right child will always have a greater key value.
+
+
